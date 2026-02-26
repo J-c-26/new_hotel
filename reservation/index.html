@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serene Haven | Luxury Hotel & Resort</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">Serene Haven</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#rooms">Rooms</a></li>
+            <li><a href="#history-section" id="historyNav" style="display:none;">My History</a></li>
+            <li id="navStatusLabel" style="color:var(--primary-gold); font-weight:bold; margin: 0 15px;"></li>
+            <li><a href="#" id="loginNavBtn">Login</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section id="home" class="hero">
+    <div class="hero-image-slot"><div class="placeholder-text">Hero Image Slot</div></div>
+    <div class="hero-content">
+        <h1>Welcome to Serene Haven</h1>
+        <p>Experience unparalleled luxury and tranquility</p>
+        <button id="bookBtn" class="book-now-btn" data-room="General Stay" data-price="$250">Book Now</button>
+    </div>
+</section>
+
+<section id="rooms" class="section">
+    <h2 class="section-title">Rooms & Suites</h2>
+    <div class="rooms-grid">
+        <div class="room-card">
+            <div class="room-image-slot"><div class="placeholder-text">Deluxe Room</div></div>
+            <div class="room-info">
+                <h3>Deluxe Room</h3>
+                <p class="price">$350/night</p>
+                <button class="book-room-btn" data-room="Deluxe Room" data-price="$350">Book This Room</button>
+            </div>
+        </div>
+        <div class="room-card">
+            <div class="room-image-slot"><div class="placeholder-text">Executive Suite</div></div>
+            <div class="room-info">
+                <h3>Executive Suite</h3>
+                <p class="price">$550/night</p>
+                <button class="book-room-btn" data-room="Executive Suite" data-price="$550">Book This Room</button>
+            </div>
+        </div>
+        <div class="room-card">
+            <div class="room-image-slot"><div class="placeholder-text">Presidential Suite</div></div>
+            <div class="room-info">
+                <h3>Presidential Suite</h3>
+                <p class="price">$1,200/night</p>
+                <button class="book-room-btn" data-room="Presidential Suite" data-price="$1,200">Book This Room</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="history-section" class="section bg-light" style="display:none;">
+    <div class="reservation-container">
+        <div id="activeBookingCard" class="original-reserve-box" style="display:none; border: 2px solid var(--primary-gold); margin-bottom:30px;">
+            <h3>Active Reservation</h3>
+            <p id="activeDetails"></p>
+            <button id="checkoutBtn" style="background:#e74c3c; margin-top:10px; cursor:pointer;">End Reservation (Check-out)</button>
+        </div>
+
+        <h2 class="section-title">Your Booking History</h2>
+        <table class="history-table" style="width:100%; background:white; border-radius:10px; border-collapse:collapse; box-shadow:var(--shadow);">
+            <thead>
+                <tr style="background:var(--light-gray);">
+                    <th style="padding:15px; text-align:left;">Room Type</th>
+                    <th style="padding:15px; text-align:left;">Status</th>
+                    <th style="padding:15px; text-align:left;">Cost</th>
+                    <th style="padding:15px; text-align:left;">Date</th>
+                </tr>
+            </thead>
+            <tbody id="historyBody">
+                </tbody>
+        </table>
+    </div>
+</section>
+
+<div id="loginModal" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Member Login</h2>
+        <form id="loginForm">
+            <div class="form-group"><label>Email</label><input type="text" id="email" required></div>
+            <div class="form-group"><label>Password</label><input type="password" id="password" required></div>
+            <button type="submit" class="login-submit-btn">Login</button>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
